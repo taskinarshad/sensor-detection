@@ -1,0 +1,36 @@
+[ 2023-01-21 17:48:38,496 ] 18 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Ingestion <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[ 2023-01-21 17:48:38,496 ] 25 root - INFO - Exporting collection data as pandas dataframe
+[ 2023-01-21 17:48:38,496 ] 23 root - INFO - Reading data from database: aps and collection: sensor
+[ 2023-01-21 17:48:48,853 ] 25 root - INFO - Found columns: Index(['_id', 'class', 'aa_000', 'ab_000', 'ac_000', 'ad_000', 'ae_000',
+       'af_000', 'ag_000', 'ag_001',
+       ...
+       'ee_002', 'ee_003', 'ee_004', 'ee_005', 'ee_006', 'ee_007', 'ee_008',
+       'ee_009', 'ef_000', 'eg_000'],
+      dtype='object', length=172)
+[ 2023-01-21 17:48:48,854 ] 27 root - INFO - Dropping column: _id 
+[ 2023-01-21 17:48:49,990 ] 29 root - INFO - Row and columns in df: (36188, 171)
+[ 2023-01-21 17:48:49,991 ] 31 root - INFO - Save data in feature store
+[ 2023-01-21 17:48:51,705 ] 37 root - INFO - Create feature store folder if not available
+[ 2023-01-21 17:48:51,706 ] 41 root - INFO - Save df to feature store folder
+[ 2023-01-21 17:48:57,153 ] 46 root - INFO - split dataset into train and test set
+[ 2023-01-21 17:48:59,657 ] 50 root - INFO - create dataset directory folder if not available
+[ 2023-01-21 17:48:59,658 ] 55 root - INFO - Save df to feature store folder
+[ 2023-01-21 17:49:04,810 ] 67 root - INFO - Data ingestion artifact: DataIngestionArtifact(feature_store_file_path='/config/workspace/artifact/01212023__174838/data_ingestion/feature_store/sensor.csv', train_file_path='/config/workspace/artifact/01212023__174838/data_ingestion/dataset/train.csv', test_file_path='/config/workspace/artifact/01212023__174838/data_ingestion/dataset/test.csv')
+[ 2023-01-21 17:49:06,321 ] 18 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Validation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[ 2023-01-21 17:49:13,004 ] 38 root - INFO - electing the columns name with null value more than threshold
+[ 2023-01-21 17:49:14,528 ] 44 root - INFO - Dropped columns ['ab_000', 'ad_000', 'bk_000', 'bl_000', 'bm_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cf_000', 'cg_000', 'ch_000', 'co_000', 'cr_000', 'ct_000', 'cu_000', 'cv_000', 'cx_000', 'cy_000', 'cz_000', 'da_000', 'db_000', 'dc_000']
+[ 2023-01-21 17:49:16,188 ] 38 root - INFO - electing the columns name with null value more than threshold
+[ 2023-01-21 17:49:16,214 ] 44 root - INFO - Dropped columns ['ab_000', 'ad_000', 'bk_000', 'bl_000', 'bm_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cf_000', 'cg_000', 'ch_000', 'co_000', 'cr_000', 'ct_000', 'cu_000', 'cv_000', 'cx_000', 'cy_000', 'cz_000', 'da_000', 'db_000', 'dc_000']
+[ 2023-01-21 17:49:16,243 ] 38 root - INFO - electing the columns name with null value more than threshold
+[ 2023-01-21 17:49:16,253 ] 44 root - INFO - Dropped columns ['ab_000', 'ad_000', 'bk_000', 'bl_000', 'bm_000', 'bn_000', 'bo_000', 'bp_000', 'bq_000', 'br_000', 'cf_000', 'cg_000', 'ch_000', 'co_000', 'cr_000', 'ct_000', 'cu_000', 'cv_000', 'cx_000', 'cy_000', 'cz_000', 'da_000', 'db_000', 'dc_000']
+[ 2023-01-21 17:49:37,630 ] 25 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Data Transformation <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[ 2023-01-21 17:49:39,833 ] 76 root - INFO - Before resampling in training set Input: (28950, 170) Target:(28950,)
+[ 2023-01-21 17:50:26,402 ] 78 root - INFO - After resampling in training set Input: (56152, 170) Target:(56152,)
+[ 2023-01-21 17:50:26,403 ] 80 root - INFO - Before resampling in testing set Input: (7238, 170) Target:(7238,)
+[ 2023-01-21 17:50:35,956 ] 82 root - INFO - After resampling in testing set Input: (14072, 170) Target:(14072,)
+[ 2023-01-21 17:50:36,260 ] 55 root - INFO - Entered the save_object method of utils
+[ 2023-01-21 17:50:36,266 ] 59 root - INFO - Exited the save_object method of utils
+[ 2023-01-21 17:50:36,266 ] 55 root - INFO - Entered the save_object method of utils
+[ 2023-01-21 17:50:36,268 ] 59 root - INFO - Exited the save_object method of utils
+[ 2023-01-21 17:50:36,268 ] 112 root - INFO - Data transformation object DataTransformationArtifact(transform_object_path='/config/workspace/artifact/01212023__174838/data_transformation/transformer/transformer.pkl', transformed_train_path='/config/workspace/artifact/01212023__174838/data_transformation/transformed/train.npz', transformed_test_path='/config/workspace/artifact/01212023__174838/data_transformation/transformed/test.npz', target_encoder_path='/config/workspace/artifact/01212023__174838/data_transformation/target_encoder/target_encoder.pkl')
+[ 2023-01-21 17:50:36,270 ] 20 root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Model Trainer <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
